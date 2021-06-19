@@ -4,8 +4,8 @@ import tkinter.messagebox
 import winsound
 
 tl = Turtle()
-pos1s = []
-pos2s = []
+pos1db = []
+pos2db = []
 
 #Window Setup
 Screen().setup(750, 750)
@@ -36,16 +36,15 @@ p1.color('blue') #Sets Colour
 p2.color('red')
 p1.penup() #Hides Trail
 p2.penup()
-p1.goto(-300,0) #Move players to set location
-p2.goto(300,0)
-p2.left(180) #Rotates Player 2
+p1.goto(-300,300) #Move players to set location
+p2.goto(-300,-300)
 p1.pendown() #Make Trail visible
 p2.pendown()
 p1.speed(0) #Forces movement when turning
 p2.speed(0)
-speed = 1
+speed = 1 #Player Speed
 
-listen()
+listen() #Listens for Keyboard Input
 #Player 1 Controls
 Screen().onkey(p1left, 'a')
 Screen().onkey(p1right, 'd')
@@ -54,46 +53,40 @@ Screen().onkey(p2left, 'Left')
 Screen().onkey(p2right, 'Right')
 
 while True:
-    p1.forward(speed)
-    p2.forward(speed)
-
-    #Boundaries
-    if p1.xcor() > 375 or p1.xcor() < -375:
+    #Retrieving Cords
+    pos1 = (p1.xcor(), p1.ycor())
+    pos2 = (p2.xcor(), p2.ycor())
+    
+    #Collision Detection | checks player position and see if its in the array
+    if pos1 in pos1db:
         tkinter.messagebox.showinfo('Game Over', "Player 2 Wins!")
         mainloop()
-
-    if p1.ycor() > 375 or p1.ycor() < -375:
+    if pos2 in pos2db:
+        tkinter.messagebox.showinfo('Game Over', "Player 1 Wins!")
+        mainloop()
+    if pos1 in pos2db:
         tkinter.messagebox.showinfo('Game Over', "Player 2 Wins!")
         mainloop()
-
-    if p2.xcor() > 375 or p2.xcor() < -375:
+    if pos2 in pos1db:
         tkinter.messagebox.showinfo('Game Over', "Player 1 Wins!")
         mainloop()
 
+    #Window Boundaries
+    if p1.xcor() > 375 or p1.xcor() < -375:
+        tkinter.messagebox.showinfo('Game Over', "Player 2 Wins!")
+        mainloop()
+    if p1.ycor() > 375 or p1.ycor() < -375:
+        tkinter.messagebox.showinfo('Game Over', "Player 2 Wins!")
+        mainloop()
+    if p2.xcor() > 375 or p2.xcor() < -375:
+        tkinter.messagebox.showinfo('Game Over', "Player 1 Wins!")
+        mainloop()
     if p2.ycor() > 375 or p2.ycor() < -375:
         tkinter.messagebox.showinfo('Game Over', "Player 1 Wins!")
         mainloop()
 
-    #Collision Detection
-    pos1 = (p1.xcor(), p1.ycor())
-    pos2 = (p2.xcor(), p2.ycor())
+    p1.forward(speed) #Moves Player
+    p2.forward(speed)
 
-    if pos1 in pos1s:
-        tkinter.messagebox.showinfo('Game Over', "Player 2 Wins!")
-        mainloop()
-    else:
-        pos1s.append(pos1)
-
-    if pos2 in pos2s:
-        tkinter.messagebox.showinfo('Game Over', "Player 1 Wins!")
-        mainloop()
-    else:
-        pos2s.append(pos2)
-
-    if pos1 in pos2s:
-        tkinter.messagebox.showinfo('Game Over', "Player 2 Wins!")
-        mainloop()
-
-    if pos2 in pos1s:
-        tkinter.messagebox.showinfo('Game Over', "Player 1 Wins!")
-        mainloop()
+    pos1db.append(pos1) #Logs Player Positions to Array
+    pos2db.append(pos2)
