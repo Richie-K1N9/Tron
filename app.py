@@ -4,6 +4,8 @@ import tkinter.messagebox
 import winsound
 
 tl = Turtle()
+pos1s = []
+pos2s = []
 
 #Window Setup
 Screen().setup(750, 750)
@@ -55,6 +57,7 @@ while True:
     p1.forward(speed)
     p2.forward(speed)
 
+    #Boundaries
     if p1.xcor() > 375 or p1.xcor() < -375:
         tkinter.messagebox.showinfo('Game Over', "Player 2 Wins!")
         mainloop()
@@ -68,5 +71,29 @@ while True:
         mainloop()
 
     if p2.ycor() > 375 or p2.ycor() < -375:
+        tkinter.messagebox.showinfo('Game Over', "Player 1 Wins!")
+        mainloop()
+
+    #Collision Detection
+    pos1 = (p1.xcor(), p1.ycor())
+    pos2 = (p2.xcor(), p2.ycor())
+
+    if pos1 in pos1s:
+        tkinter.messagebox.showinfo('Game Over', "Player 2 Wins!")
+        mainloop()
+    else:
+        pos1s.append(pos1)
+
+    if pos2 in pos2s:
+        tkinter.messagebox.showinfo('Game Over', "Player 1 Wins!")
+        mainloop()
+    else:
+        pos2s.append(pos2)
+
+    if pos1 in pos2s:
+        tkinter.messagebox.showinfo('Game Over', "Player 2 Wins!")
+        mainloop()
+
+    if pos2 in pos1s:
         tkinter.messagebox.showinfo('Game Over', "Player 1 Wins!")
         mainloop()
