@@ -12,7 +12,7 @@ Screen().setup(750, 750)
 Screen().bgcolor('black')
 
 #Music
-winsound.PlaySound('music.wav', winsound.SND_ASYNC | winsound.SND_ALIAS )
+winsound.PlaySound('music.wav', winsound.SND_LOOP + winsound.SND_ASYNC)
 
 #Player Control
 def p1left():
