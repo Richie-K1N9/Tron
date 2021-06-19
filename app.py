@@ -1,6 +1,7 @@
 from turtle import *
 import math
 import tkinter.messagebox
+import winsound
 
 tl = Turtle()
 
@@ -8,6 +9,10 @@ tl = Turtle()
 Screen().setup(750, 750)
 Screen().bgcolor('black')
 
+#Music
+winsound.PlaySound('music.wav', winsound.SND_ASYNC | winsound.SND_ALIAS )
+
+#Player Control
 def p1left():
     p1.left(90)
 
@@ -59,9 +64,9 @@ while True:
         mainloop()
 
     if p2.xcor() > 375 or p2.xcor() < -375:
-        tkinter.messagebox.showinfo('Game Over', "Player 2 Wins!")
+        tkinter.messagebox.showinfo('Game Over', "Player 1 Wins!")
         mainloop()
 
     if p2.ycor() > 375 or p2.ycor() < -375:
-        tkinter.messagebox.showinfo('Game Over', "Player 2 Wins!")
+        tkinter.messagebox.showinfo('Game Over', "Player 1 Wins!")
         mainloop()
