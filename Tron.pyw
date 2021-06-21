@@ -1,8 +1,14 @@
-
 import subprocess
-from tkinter import *
 from subprocess import call
 import os
+import sys
+
+if sys.version_info[0] < 3: #Checks if the User is running an older version of Python
+    import Tkinter
+    import tkMessageBox
+    tkMessageBox.showerror('Python Error', 'Must be running Python 3.x')
+
+from tkinter import *
 
 tk = Tk()
 var = IntVar()
@@ -17,7 +23,7 @@ def hd():
     call(['pythonw', 'hard.file'])
 
 def help():
-    os.system('notepad.exe instructions.txt')
+    os.system('notepad.exe README.txt')
 
 tk.title('Tron Launcher')
 tk.geometry('175x125') #Sets Menu Dimensions
