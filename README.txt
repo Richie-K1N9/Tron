@@ -3,7 +3,7 @@ Developed by Richie King
 Background Music: Ganja - Ooyy
 
 Minimum System Requirements:
-OS: Windows Vista, 7, 8/8.1, 10 | OSX 10.6+
+OS: Windows Vista, 7, 8/8.1, 10
 Memory: 1 GB RAM
 Storage: 1GB available space
 
