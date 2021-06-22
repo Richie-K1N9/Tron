@@ -34,7 +34,7 @@ head = Label(tk, text='Chose Difficulty')
 easy = Button(tk, text='Easy', command= ed )
 medium = Button(tk, text='Medium', command= md )
 hard = Button(tk, text='Hard', command= hd )
-instr = Button(tk, text='Instructions', command= help )
+instr = Button(tk, text='How to use', command= help )
 
 easy.pack()
 medium.pack()

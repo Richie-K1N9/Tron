@@ -13,7 +13,7 @@ Setup Instructions
 3. Right-click the .zip file on the USB and select 'Extract All' and Press 'Ok'
 
 Run Instructions:
-1. Run Tron.pyw this will open up the launcher window
+1. Run Tron.exe this will open up the launcher window
 2. Chose a difficulty by pressing either Easy, Medium or Hard Button
 3. Use your keyboard to control the players
 4. When the Game Over, press Ok to Play Again or Close both windows to exit
@@ -32,8 +32,5 @@ A. If you are having any issues with the game, you can download the latest versi
 Q. When I launch the game, nothing happens.
 A. There is probably an error in the installation of the game or python. Reinstall both
 
-Tested System
-OS: Windows 10 Pro
-CPU: AMD Ryzen 5 3400G
-Memory: 32GB DDR4
-Graphics: GTX 1050 Ti
+Q. Windows detects .exe game as a virus
+A. The game isnt a virus, if you are unable to run the .exe, you can run the .pyw version
