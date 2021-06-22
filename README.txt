@@ -4,13 +4,13 @@ Background Music: Ganja - Ooyy
 
 Minimum System Requirements:
 OS: Windows Vista, 7, 8/8.1, 10
+CPU: 64-bit processor
 Memory: 1 GB RAM
 Storage: 1GB available space
 
 Setup Instructions
-1. Visit https://www.python.org/downloads/ and download the latest version for your system
+1. Visit https://www.python.org/downloads/ and download the latest version for your system 
 2. Run the installer (SysAdmin Permissions Required)
-3. Right-click the .zip file on the USB and select 'Extract All' and Press 'Ok'
 
 Run Instructions:
 1. Run Tron.exe this will open up the launcher window
@@ -33,4 +33,4 @@ Q. When I launch the game, nothing happens.
 A. There is probably an error in the installation of the game or python. Reinstall both
 
 Q. Windows detects .exe game as a virus
-A. The game isnt a virus, if you are unable to run the .exe, you can run the .pyw version
+A. The game isnt a virus, if you are unable to run the .exe, you can run the .pyw file
